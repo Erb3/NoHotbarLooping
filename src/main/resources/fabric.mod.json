@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "nohotbarlooping",
-  "version": "${version}",
+  "version": "${mod_version}",
 
   "environment": "client",
   "entrypoints": {
@@ -12,16 +12,19 @@
       "github.erb3.fabric.nohotbarlooping.ModMenuIntegration"
     ]
   },
+
   "mixins": [
     "nohotbarlooping.mixins.json"
   ],
 
   "name": "No Hotbar Looping",
   "description": "A mod that can disable looping of your hotbar (clientside only)",
+
   "authors": [
     "Erb3",
     "Contributors"
   ],
+
   "contact": {
     "website": "https://github.com/Erb3/mc-mods/NoHotbarLooping",
     "repo": "https://github.com/Erb3/mc-mods.git",
@@ -29,18 +32,20 @@
     "sources": "https://github.com/Erb3/mc-mods/NoHotbarLooping",
     "issues": "https://github.com/Erb3/mc-mods/issues"
   },
+
   "license": "GPL-3.0",
   "icon": "assets/nohotbarlooping/icon.png",
 
   "depends": {
-    "fabricloader": ">=0.14",
-    "minecraft": "1.19.4",
+    "fabricloader": ">=${loader_version}",
+    "minecraft": "${minecraft_version}",
     "java": ">=17",
     "fabric-api": "*",
     "fabric-key-binding-api-v1": "*"
   },
+
   "recommends": {
-    "modmenu": "*",
-    "cloth-config-api": "*"
+    "modmenu": "${mod_menu_version}",
+    "cloth-config-api": "${cloth_version}"
   }
 }
