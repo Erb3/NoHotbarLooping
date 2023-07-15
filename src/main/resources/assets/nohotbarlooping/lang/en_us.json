@@ -1,0 +1,10 @@
+{
+  "nohotbarlooping.config.title": "NoHotbarLooping Config",
+  "nohotbarlooping.config.category": "General",
+  "nohotbarlooping.config.enabled.name": "Enabled",
+  "nohotbarlooping.config.enabled.description": "If NoHotbarLooping should be enabled, making hotbars not loop",
+  "nohotbarlooping.keybinding.name": "Toggle if enabled",
+  "nohotbarlooping.keybinding.category": "NoHotbarLooping",
+  "nohotbarlooping.toast.enabled": "Hotbar looping disabled",
+  "nohotbarlooping.toast.disabled": "Hotbar looping enabled"
+}

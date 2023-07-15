@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "github.erb3.fabric.nohotbarlooping.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+  ],
+  "client": [
+    "PlayerInventoryMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
