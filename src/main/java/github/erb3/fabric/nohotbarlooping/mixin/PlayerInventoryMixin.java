@@ -3,42 +3,31 @@ package github.erb3.fabric.nohotbarlooping.mixin;
 import github.erb3.fabric.nohotbarlooping.NoHotbarLooping;
 import net.minecraft.entity.player.PlayerInventory;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Overwrite;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(PlayerInventory.class)
 public class PlayerInventoryMixin {
-
-    /**
-     * @author Erb3
-     * @reason To disable looping
-     */
-    @Overwrite
-    public void scrollInHotbar(double scrollAmount) {
-        assert NoHotbarLooping.client.player != null;
-        PlayerInventory inv = NoHotbarLooping.client.player.getInventory();
-
-        int i = (int) Math.signum(scrollAmount);
-        int selectedSlot = inv.selectedSlot - i;
-
+    @Inject(method="scrollInHotbar", at = @At("HEAD"), cancellable = true)
+    public void onScrollInHotbar(double scrollAmount, CallbackInfo ci) {
         if (NoHotbarLooping.shouldLoopHotbar) {
-            while (selectedSlot < 0) {
-                selectedSlot += 9;
-            }
-
-            while (selectedSlot >= 9) {
-                selectedSlot -= 9;
-            }
-        } else {
-            while (selectedSlot < 0) {
-                selectedSlot += 1;
-            }
-
-            while(selectedSlot >= 9) {
-                selectedSlot -= 1;
-            }
+            return;
         }
 
+        assert NoHotbarLooping.client.player != null;
+        PlayerInventory inv = NoHotbarLooping.client.player.getInventory();
+        int newSlot = inv.selectedSlot - (int) Math.signum(scrollAmount);
 
-        inv.selectedSlot = selectedSlot;
+        while (newSlot < 0) {
+            newSlot += 1;
+        }
+
+        while (newSlot >= 9) {
+            newSlot -= 1;
+        }
+
+        inv.selectedSlot = newSlot;
+        ci.cancel();
     }
 }
