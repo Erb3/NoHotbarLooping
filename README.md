@@ -11,7 +11,9 @@ Simply add this mod to your game, and you can no longer loop through your hotbar
 <!-- TOC -->
 * [No Hotbar Looping](#no-hotbar-looping)
   * [Features](#features)
+  * [Screenshots](#screenshots)
   * [FAQ](#faq)
+  * [Updating the mod](#updating-the-mod)
 <!-- TOC -->
 
 ## Features
