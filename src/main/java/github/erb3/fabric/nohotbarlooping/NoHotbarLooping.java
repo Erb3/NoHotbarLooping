@@ -55,7 +55,7 @@ public class NoHotbarLooping implements ClientModInitializer {
         String title;
 
         if (enabled) {
-            item = Items.REDSTONE_BLOCK;
+            item = Items.BARRIER;
             title = translate("toast.enabled").getString();
         } else {
             item = Items.EMERALD_BLOCK;
