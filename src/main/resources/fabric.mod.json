@@ -34,7 +34,9 @@
   },
 
   "license": "GPL-3.0",
-  "icon": "assets/nohotbarlooping/icon.png",
+  "icon": {
+    "512": "assets/nohotbarlooping/icon512.png"
+  },
 
   "depends": {
     "fabricloader": ">=${loader_version}",
