@@ -22,11 +22,11 @@ public class ModMenuIntegration implements ModMenuApi {
             ConfigEntryBuilder entryBuilder = builder.entryBuilder();
             general.addEntry(entryBuilder.startBooleanToggle(
                         NoHotbarLooping.translate("config.enabled.name"),
-                        NoHotbarLooping.enabled
+                        NoHotbarLooping.shouldLoopHotbar
                     )
                     .setDefaultValue(true)
                     .setTooltip(NoHotbarLooping.translate("config.enabled.description"))
-                    .setSaveConsumer((newValue) -> NoHotbarLooping.conf.toggle())
+                    .setSaveConsumer((newValue) -> NoHotbarLooping.config.toggle())
                     .build());
 
             return builder.build();

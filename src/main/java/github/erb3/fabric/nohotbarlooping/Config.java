@@ -13,28 +13,28 @@ public class Config {
 
     public void saveConfig() {
         try (FileWriter writer = new FileWriter(configFile)) {
-            gson.toJson(NoHotbarLooping.enabled, writer);
+            gson.toJson(NoHotbarLooping.shouldLoopHotbar, writer);
         } catch (IOException e) {
-            NoHotbarLooping.LOGGER.error("Could not save NoHotbarLooping config!");
+            NoHotbarLooping.logger.error("Could not save No Hotbar Looping configuration!");
             e.printStackTrace();
         }
     }
 
     public void loadConfig() {
         try (Reader reader = new FileReader(configFile)) {
-            NoHotbarLooping.enabled = gson.fromJson(reader, Boolean.class);
+            NoHotbarLooping.shouldLoopHotbar = gson.fromJson(reader, Boolean.class);
         } catch (Exception e) {
             if (configFile.exists()) {
-                NoHotbarLooping.LOGGER.error("Config file exists, but could not load.");
+                NoHotbarLooping.logger.error("No Hotbar Looping configuration file exists, but could not load.");
                 e.printStackTrace();
             } else {
-                NoHotbarLooping.LOGGER.warn("Config file does not exist!");
+                NoHotbarLooping.logger.warn("No Hotbar Looping configuration file does not exist!");
             }
         }
     }
 
     public void toggle() {
-        NoHotbarLooping.enabled = !NoHotbarLooping.enabled;
+        NoHotbarLooping.shouldLoopHotbar = !NoHotbarLooping.shouldLoopHotbar;
         this.saveConfig();
     }
 

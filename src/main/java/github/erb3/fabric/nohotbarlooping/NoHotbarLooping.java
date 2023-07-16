@@ -21,45 +21,44 @@ public class NoHotbarLooping implements ClientModInitializer {
     private static ToastManager toaster;
 
     @SuppressWarnings("SpellCheckingInspection")
-    public static final String MOD_ID = "nohotbarlooping";
-    public static final Logger LOGGER = LoggerFactory.getLogger("NoHotbarLooping");
-    public static final Config conf = new Config();
-    public static boolean enabled = true;
-
+    public static final String modid = "nohotbarlooping";
+    public static final Logger logger = LoggerFactory.getLogger("NoHotbarLooping");
+    public static final Config config = new Config();
+    public static boolean shouldLoopHotbar = true;
 
     @Override
     public void onInitializeClient() {
-        LOGGER.info("Hello from NoHotbarLooping main class!");
+        logger.info("Hello from No Hotbar Looping!");
         client = MinecraftClient.getInstance();
         toaster = client.getToastManager();
 
         keyBinding = KeyBindingHelper.registerKeyBinding(new KeyBinding(
-                MOD_ID + ".keybinding.name",
+                modid + ".keybinding.name",
                 InputUtil.Type.KEYSYM,
                 GLFW.GLFW_KEY_PERIOD,
-                MOD_ID +".keybinding.category"
+                modid +".keybinding.category"
         ));
 
         ClientTickEvents.END_CLIENT_TICK.register((client) -> {
             while (keyBinding.wasPressed()) {
-                conf.toggle();
-                renderToast(enabled);
+                config.toggle();
+                renderToast(shouldLoopHotbar);
             }
         });
 
-        conf.loadConfig();
+        config.loadConfig();
     }
 
-    private static void renderToast(boolean enabled) {
+    private static void renderToast(boolean shouldLoopHotbar) {
         Item item;
         String title;
 
-        if (enabled) {
-            item = Items.BARRIER;
-            title = translate("toast.enabled").getString();
-        } else {
+        if (shouldLoopHotbar) {
             item = Items.EMERALD_BLOCK;
             title = translate("toast.disabled").getString();
+        } else {
+            item = Items.BARRIER;
+            title = translate("toast.enabled").getString();
         }
 
         Toast toast = new CustomToast(item, title, "- NoHotbarLooping");
@@ -68,6 +67,6 @@ public class NoHotbarLooping implements ClientModInitializer {
     }
 
     public static Text translate(String key) {
-        return Text.translatable(MOD_ID + "." + key);
+        return Text.translatable(modid + "." + key);
     }
 }

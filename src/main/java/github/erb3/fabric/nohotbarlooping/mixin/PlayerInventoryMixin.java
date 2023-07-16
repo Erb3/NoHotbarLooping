@@ -20,21 +20,21 @@ public class PlayerInventoryMixin {
         int i = (int) Math.signum(scrollAmount);
         int selectedSlot = inv.selectedSlot - i;
 
-        if (NoHotbarLooping.enabled) {
-            while (selectedSlot < 0) {
-                selectedSlot += 1;
-            }
-
-            while(selectedSlot >= 9) {
-                selectedSlot -= 1;
-            }
-        } else {
+        if (NoHotbarLooping.shouldLoopHotbar) {
             while (selectedSlot < 0) {
                 selectedSlot += 9;
             }
 
             while (selectedSlot >= 9) {
                 selectedSlot -= 9;
+            }
+        } else {
+            while (selectedSlot < 0) {
+                selectedSlot += 1;
+            }
+
+            while(selectedSlot >= 9) {
+                selectedSlot -= 1;
             }
         }
 
