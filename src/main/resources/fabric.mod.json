@@ -26,11 +26,11 @@
   ],
 
   "contact": {
-    "website": "https://github.com/Erb3/mc-mods/NoHotbarLooping",
-    "repo": "https://github.com/Erb3/mc-mods.git",
-    "homepage": "https://github.com/Erb3/mc-mods/NoHotbarLooping",
-    "sources": "https://github.com/Erb3/mc-mods/NoHotbarLooping",
-    "issues": "https://github.com/Erb3/mc-mods/issues"
+    "website": "https://github.com/Erb3/NoHotbarLooping",
+    "repo": "https://github.com/Erb3/NoHotbarLooping.git",
+    "homepage": "https://github.com/Erb3/NoHotbarLooping",
+    "sources": "https://github.com/Erb3/NoHotbarLooping",
+    "issues": "https://github.com/Erb3/NoHotbarLooping/issues"
   },
 
   "license": "GPL-3.0",
