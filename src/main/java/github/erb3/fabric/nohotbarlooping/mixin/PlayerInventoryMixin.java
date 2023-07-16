@@ -2,6 +2,7 @@ package github.erb3.fabric.nohotbarlooping.mixin;
 
 import github.erb3.fabric.nohotbarlooping.NoHotbarLooping;
 import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.util.math.MathHelper;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -17,17 +18,9 @@ public class PlayerInventoryMixin {
 
         assert NoHotbarLooping.client.player != null;
         PlayerInventory inv = NoHotbarLooping.client.player.getInventory();
-        int newSlot = inv.selectedSlot - (int) Math.signum(scrollAmount);
+        inv.selectedSlot = MathHelper.clamp(
+                inv.selectedSlot - (int) Math.signum(scrollAmount), 0, 8);
 
-        while (newSlot < 0) {
-            newSlot += 1;
-        }
-
-        while (newSlot >= 9) {
-            newSlot -= 1;
-        }
-
-        inv.selectedSlot = newSlot;
         ci.cancel();
     }
 }
