@@ -64,7 +64,7 @@ modrinth {
     versionNumber = project.mod_version
     versionName = "${project.mod_version} for ${project.minecraft_version}"
     versionType = "release"
-    changelog = "Automatically uploaded with Minotaur. Changelog available on [GitHub releases](https://github.com/Erb3/NoHotbarLooping/releases/tag/${project.mod_version})."
+    changelog = "Automatically uploaded with Minotaur. Changelog available on [GitHub releases](https://github.com/Erb3/NoHotbarLooping/releases/tag/${project.mod_version}-${project.minecraft_version})."
     gameVersions = [project.minecraft_version]
     loaders = ["fabric"]
     uploadFile = remapJar
