@@ -2,8 +2,8 @@
 # No Hotbar Looping
 
 
-![fabric](./assets/fabric.png)
-[![modrinth](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/modrinth_vector.svg)](https://modrinth.com/mod/cactusfix)
+![fabric](https://github.com/Erb3/NoHotbarLooping/blob/1.19.4/assets/fabric.png?raw=true)
+[![modrinth](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/modrinth_vector.svg)](https://modrinth.com/mod/NoHotbarLooping)
 
 Ever wanted your hotbar to not loop when you scroll at the end of it? This mod fixes this!
 Simply add this mod to your game, and you can no longer loop through your hotbar.
@@ -24,9 +24,9 @@ Simply add this mod to your game, and you can no longer loop through your hotbar
 
 ## Screenshots
 
-![Hotbarlooping disabled toast](./assets/hotbarlooping-disabled.png)
-![Hotbarlooping enabled toast](./assets/hotbarlooping-enabled.png)
-![ModMenu](./assets/settings.png)
+![Hotbarlooping disabled toast](https://github.com/Erb3/NoHotbarLooping/blob/1.19.4/assets/hotbarlooping-disabled.png?raw=true)
+![Hotbarlooping enabled toast](https://github.com/Erb3/NoHotbarLooping/blob/1.19.4/assets/hotbarlooping-enabled.png?raw=true)
+![ModMenu](https://github.com/Erb3/NoHotbarLooping/blob/1.19.4/assets/settings.png?raw=true)
 
 ## FAQ
 
