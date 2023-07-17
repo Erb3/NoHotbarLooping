@@ -2,6 +2,7 @@ package github.erb3.fabric.nohotbarlooping;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.render.GameRenderer;
 import net.minecraft.client.toast.Toast;
 import net.minecraft.client.toast.ToastManager;
@@ -30,27 +31,27 @@ public class CustomToast implements Toast {
         this.icon = item.getDefaultStack();
         this.title = Text.literal(title).setStyle(Style.EMPTY.withColor(titleColor));
         this.text = Text.literal(text).setStyle(Style.EMPTY.withColor(textColor));
-        this.duration = 6000;
+        this.duration = 4500;
     }
 
     @Override
-    public Visibility draw(MatrixStack matrices, ToastManager manager, long currentTime) {
+    public Visibility draw(DrawContext context, ToastManager manager, long currentTime) {
         if (!timeStarted) {
             start = currentTime;
             timeStarted = true;
         }
 
         RenderSystem.setShader(GameRenderer::getPositionTexProgram);
-        RenderSystem.setShaderTexture(0, TEXTURE);
         RenderSystem.setShaderColor(1, 1, 1, 1);
-        ToastManager.drawTexture(matrices, 0, 0, 0, 0, getWidth(), getHeight());
+
+        context.drawTexture(TEXTURE, 0, 0, 0, 0, getWidth(), getHeight());
 
         int x = 28;
         MinecraftClient mc = MinecraftClient.getInstance();
 
-        mc.textRenderer.draw(matrices, title, x, 7, titleColor);
-        mc.textRenderer.draw(matrices, text, x, 18, textColor);
-        mc.getItemRenderer().renderInGui(matrices, icon, 8, 8);
+        context.drawText(mc.textRenderer, title, x, 7, titleColor, false);
+        context.drawText(mc.textRenderer, text, x, 18, textColor, false);
+        context.drawItem(icon, 8, 8);
 
         return currentTime - start >= duration ? Toast.Visibility.HIDE : Toast.Visibility.SHOW;
     }
