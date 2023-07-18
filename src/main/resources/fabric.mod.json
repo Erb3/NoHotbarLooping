@@ -18,7 +18,7 @@
   ],
 
   "name": "No Hotbar Looping",
-  "description": "A mod that can disable looping of your hotbar (clientside only)",
+  "description": "You can now toggle if your hotbar should loop!",
 
   "authors": [
     "Erb3",

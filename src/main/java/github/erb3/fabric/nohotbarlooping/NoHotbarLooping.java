@@ -24,7 +24,7 @@ public class NoHotbarLooping implements ClientModInitializer {
     public static final String modid = "nohotbarlooping";
     public static final Logger logger = LoggerFactory.getLogger("NoHotbarLooping");
     public static final Config config = new Config();
-    public static boolean shouldLoopHotbar = true;
+    public static boolean shouldLoopHotbar = false;
 
     @Override
     public void onInitializeClient() {

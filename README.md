@@ -1,6 +1,7 @@
 
 # No Hotbar Looping
 
+🔁 You can now toggle if your hotbar should loop!
 
 ![fabric](https://github.com/Erb3/NoHotbarLooping/blob/1.19.4/assets/fabric.png?raw=true)
 [![modrinth](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/modrinth_vector.svg)](https://modrinth.com/mod/NoHotbarLooping)
