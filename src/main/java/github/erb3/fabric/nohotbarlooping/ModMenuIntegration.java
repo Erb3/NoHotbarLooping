@@ -12,22 +12,22 @@ public class ModMenuIntegration implements ModMenuApi {
 
         return parent -> {
             ConfigBuilder builder = ConfigBuilder.create()
-                    .setParentScreen(parent)
-                    .setTitle(NoHotbarLooping.translate("config.title"));
+                .setParentScreen(parent)
+                .setTitle(NoHotbarLooping.translate("config.title"));
 
             ConfigCategory general = builder.getOrCreateCategory(
-                    NoHotbarLooping.translate("config.category")
+                NoHotbarLooping.translate("config.category")
             );
 
             ConfigEntryBuilder entryBuilder = builder.entryBuilder();
             general.addEntry(entryBuilder.startBooleanToggle(
-                        NoHotbarLooping.translate("config.enabled.name"),
-                        NoHotbarLooping.shouldLoopHotbar
-                    )
-                    .setDefaultValue(true)
-                    .setTooltip(NoHotbarLooping.translate("config.enabled.description"))
-                    .setSaveConsumer((newValue) -> NoHotbarLooping.config.toggle())
-                    .build());
+                    NoHotbarLooping.translate("config.enabled.name"),
+                    NoHotbarLooping.shouldLoopHotbar
+                )
+                .setDefaultValue(true)
+                .setTooltip(NoHotbarLooping.translate("config.enabled.description"))
+                .setSaveConsumer((newValue) -> NoHotbarLooping.config.toggle())
+                .build());
 
             return builder.build();
         };

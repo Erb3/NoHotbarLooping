@@ -19,7 +19,7 @@ public class PlayerInventoryMixin {
     @Final
     private static int HOTBAR_SIZE;
 
-    @Inject(method="scrollInHotbar", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "scrollInHotbar", at = @At("HEAD"), cancellable = true)
     public void onScrollInHotbar(double scrollAmount, CallbackInfo ci) {
         if (NoHotbarLooping.shouldLoopHotbar) {
             return;

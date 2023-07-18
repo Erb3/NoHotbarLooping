@@ -2,7 +2,6 @@
   "schemaVersion": 1,
   "id": "nohotbarlooping",
   "version": "${mod_version}",
-
   "environment": "client",
   "entrypoints": {
     "client": [
@@ -12,19 +11,15 @@
       "github.erb3.fabric.nohotbarlooping.ModMenuIntegration"
     ]
   },
-
   "mixins": [
     "nohotbarlooping.mixins.json"
   ],
-
   "name": "No Hotbar Looping",
   "description": "You can now toggle if your hotbar should loop!",
-
   "authors": [
     "Erb3",
     "Contributors"
   ],
-
   "contact": {
     "website": "https://github.com/Erb3/NoHotbarLooping",
     "repo": "https://github.com/Erb3/NoHotbarLooping.git",
@@ -32,12 +27,10 @@
     "sources": "https://github.com/Erb3/NoHotbarLooping",
     "issues": "https://github.com/Erb3/NoHotbarLooping/issues"
   },
-
   "license": "GPL-3.0",
   "icon": {
     "512": "assets/nohotbarlooping/icon512.png"
   },
-
   "depends": {
     "fabricloader": ">=${loader_version}",
     "minecraft": "${minecraft_version}",
@@ -45,7 +38,6 @@
     "fabric-api": "*",
     "fabric-key-binding-api-v1": "*"
   },
-
   "recommends": {
     "modmenu": "${mod_menu_version}",
     "cloth-config-api": "${cloth_version}"

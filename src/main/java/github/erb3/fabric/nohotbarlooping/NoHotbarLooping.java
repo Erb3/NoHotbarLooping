@@ -33,10 +33,10 @@ public class NoHotbarLooping implements ClientModInitializer {
         toaster = client.getToastManager();
 
         keyBinding = KeyBindingHelper.registerKeyBinding(new KeyBinding(
-                modid + ".keybinding.name",
-                InputUtil.Type.KEYSYM,
-                GLFW.GLFW_KEY_PERIOD,
-                modid +".keybinding.category"
+            modid + ".keybinding.name",
+            InputUtil.Type.KEYSYM,
+            GLFW.GLFW_KEY_PERIOD,
+            modid + ".keybinding.category"
         ));
 
         ClientTickEvents.END_CLIENT_TICK.register((client) -> {
