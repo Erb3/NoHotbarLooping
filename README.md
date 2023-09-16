@@ -52,12 +52,13 @@ If I feel like it :)
 
 **Where can I get in touch with you?**
 
-Up-to-date contact information can be found at my [GitHub](https://github.com/Erb3/Erb3/blob/main/README.md).
+Up-to-date contact information can be found at Erb3's [GitHub](https://github.com/Erb3/Erb3/blob/main/README.md).
 
 ## Updating the mod
 
 > **Note**
-> This is how I work when I update the mod to new version. You as a player should not have to do this.
+> This is how I work when I update the mod to a new version.
+> You as a player should not have to do this.
 
 1. Create new branch
 2. Update gradle.properties
