@@ -10,12 +10,10 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Style;
 import net.minecraft.text.Text;
+import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.NotNull;
 
 public class CustomToast implements Toast {
-
-    // Inspired by Meteor-client/MeteorToast
-
     public static final int titleColor = 0xFFFFFF;
     public static final int textColor = 0xD3D3D3;
 
@@ -43,7 +41,7 @@ public class CustomToast implements Toast {
         RenderSystem.setShader(GameRenderer::getPositionTexProgram);
         RenderSystem.setShaderColor(1, 1, 1, 1);
 
-        context.drawTexture(TEXTURE, 0, 0, 0, 0, getWidth(), getHeight());
+        context.drawGuiTexture(new Identifier("toast/advancement"), 0, 0, getWidth(), getHeight());
 
         int x = 28;
         MinecraftClient mc = MinecraftClient.getInstance();
