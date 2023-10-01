@@ -22,7 +22,8 @@ Pull requests are the best way to propose changes to the codebase. We actively w
 
 ## Any contributions you make will be under the Mozilla Public License 2.0
 
-In short, when you submit code changes, your submissions are understood to be under the same [GPL 3.0](https://choosealicense.com/licenses/gpl-3.0/) that covers the project. Feel free to contact the maintainers if that's a concern.
+In short, when you submit code changes, your submissions are understood to be under the same [MPL 2.0](https://choosealicense.com/licenses/mpl-2.0/) that covers the project.
+Feel free to contact the maintainers if that's a concern.
 
 ## Report bugs using GitHub's [issues tab](https://github.com/Erb3/NoHotbarLooping/issues)
 
