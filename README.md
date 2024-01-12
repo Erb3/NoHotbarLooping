@@ -44,7 +44,7 @@ To clarify: You **may not** publish this mod's compiled jars somewhere else, and
 
 **Plz updat to forge**
 
-I won't update to forge, as I have never touched it, and have no plan to do so.
+I won't update to forge, as I have never touched it, and have no plan to do so. However, [users are reporting that it works](https://github.com/Erb3/NoHotbarLooping/issues/2) with [Sinytra Connector](https://github.com/Sinytra/Connector).
 
 **Will you update this to new MC versions?**
 
