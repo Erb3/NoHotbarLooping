@@ -4,6 +4,7 @@
 🔁 You can now toggle if your hotbar should loop!
 
 ![fabric](https://github.com/Erb3/NoHotbarLooping/blob/1.19.4/assets/fabric.png?raw=true)
+[![9minecraft](https://github.com/blryface/blurrybadges/blob/main/badges/64h/Stolen%20By%209minecraft.png?raw=true)](https://nineminecraft.com/)
 [![modrinth](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/modrinth_vector.svg)](https://modrinth.com/mod/NoHotbarLooping)
 
 Ever wanted your hotbar to not loop when you scroll at the end of it? This mod fixes this!
