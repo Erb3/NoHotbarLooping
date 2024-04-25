@@ -1,5 +1,5 @@
 plugins {
-    id 'fabric-loom' version '1.1.7'
+    id 'fabric-loom' version '1.6-SNAPSHOT'
     id 'io.github.juuxel.loom-quiltflower' version '1.10.0'
     id "com.modrinth.minotaur" version "2.+"
 }
@@ -38,14 +38,14 @@ processResources {
 
 tasks.withType(JavaCompile).configureEach {
     it.options.encoding = "UTF-8"
-    it.options.release = 17
+    it.options.release = 21
 }
 
 java {
-    def javaVersion = JavaVersion.toVersion(17)
+    def javaVersion = JavaVersion.toVersion(21)
 
     if (JavaVersion.current() < javaVersion) {
-        toolchain.languageVersion = JavaLanguageVersion.of(17)
+        toolchain.languageVersion = JavaLanguageVersion.of(21)
     }
 
     archivesBaseName = project.archives_base_name
