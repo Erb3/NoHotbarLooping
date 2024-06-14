@@ -41,7 +41,7 @@ public class CustomToast implements Toast {
         RenderSystem.setShader(GameRenderer::getPositionTexProgram);
         RenderSystem.setShaderColor(1, 1, 1, 1);
 
-        context.drawGuiTexture(new Identifier("toast/advancement"), 0, 0, getWidth(), getHeight());
+        context.drawGuiTexture(Identifier.ofVanilla("toast/advancement"), 0, 0, getWidth(), getHeight());
 
         int x = 28;
         MinecraftClient mc = MinecraftClient.getInstance();

@@ -32,7 +32,6 @@ Simply add this mod to your game, and you can no longer loop through your hotbar
 
 ## FAQ
 
-
 **Can I use this mod in my modpack?**
 
 Yes! You are more than welcome to include my mod in your modpack, if you credit me, and do not reupload the mod.
@@ -57,7 +56,7 @@ Up-to-date contact information can be found at Erb3's [GitHub](https://github.co
 
 ## Updating the mod
 
-> **Note**
+> [!NOTE]
 > This is how I work when I update the mod to a new version.
 > You as a player should not have to do this.
 
