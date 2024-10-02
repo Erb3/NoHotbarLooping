@@ -32,6 +32,11 @@ public class CustomToast implements Toast {
     }
 
     @Override
+    public Object getType() {
+        return NoHotbarLooping.modid;
+    }
+
+    @Override
     public Visibility draw(DrawContext context, ToastManager manager, long currentTime) {
         if (!timeStarted) {
             start = currentTime;
@@ -51,5 +56,9 @@ public class CustomToast implements Toast {
         context.drawItem(icon, 8, 8);
 
         return currentTime - start >= duration ? Toast.Visibility.HIDE : Toast.Visibility.SHOW;
+    }
+
+    public void remove() {
+        this.start = Short.MIN_VALUE;
     }
 }
