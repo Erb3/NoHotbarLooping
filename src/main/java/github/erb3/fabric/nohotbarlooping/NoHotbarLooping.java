@@ -5,7 +5,6 @@ import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.option.KeyBinding;
-import net.minecraft.client.toast.Toast;
 import net.minecraft.client.toast.ToastManager;
 import net.minecraft.client.util.InputUtil;
 import net.minecraft.item.Item;
@@ -61,9 +60,9 @@ public class NoHotbarLooping implements ClientModInitializer {
             title = translate("toast.enabled").getString();
         }
 
-        Toast toast = new CustomToast(item, title, "- NoHotbarLooping");
-        toaster.clear();
-        toaster.add(toast);
+        CustomToast oldToast = toaster.getToast(CustomToast.class, NoHotbarLooping.modid);
+        if (oldToast != null) oldToast.remove();
+        toaster.add(new CustomToast(item, title, "- NoHotbarLooping"));
     }
 
     public static Text translate(String key) {
