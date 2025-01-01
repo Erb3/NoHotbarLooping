@@ -15,7 +15,6 @@ Simply add this mod to your game, and you can no longer loop through your hotbar
   * [Features](#features)
   * [Screenshots](#screenshots)
   * [FAQ](#faq)
-  * [Updating the mod](#updating-the-mod)
 <!-- TOC -->
 
 ## Features
