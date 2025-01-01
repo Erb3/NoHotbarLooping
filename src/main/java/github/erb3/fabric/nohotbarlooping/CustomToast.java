@@ -2,8 +2,9 @@ package github.erb3.fabric.nohotbarlooping;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.gui.DrawContext;
-import net.minecraft.client.render.GameRenderer;
+import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.toast.Toast;
 import net.minecraft.client.toast.ToastManager;
 import net.minecraft.item.Item;
@@ -23,6 +24,7 @@ public class CustomToast implements Toast {
     private final long duration;
     private boolean timeStarted = false;
     private long start;
+    private Visibility visibility = Visibility.HIDE;
 
     public CustomToast(@NotNull Item item, @NotNull String title, @NotNull String text) {
         this.icon = item.getDefaultStack();
@@ -32,21 +34,29 @@ public class CustomToast implements Toast {
     }
 
     @Override
+    public Visibility getVisibility() {
+        return this.visibility;
+    }
+
+    @Override
     public Object getType() {
         return NoHotbarLooping.modid;
     }
 
     @Override
-    public Visibility draw(DrawContext context, ToastManager manager, long currentTime) {
+    public void update(ToastManager manager, long currentTime) {
         if (!timeStarted) {
             start = currentTime;
             timeStarted = true;
         }
 
-        RenderSystem.setShader(GameRenderer::getPositionTexProgram);
-        RenderSystem.setShaderColor(1, 1, 1, 1);
+        this.visibility = currentTime - start >= this.duration ? Visibility.HIDE : Visibility.SHOW;
+    }
 
-        context.drawGuiTexture(Identifier.ofVanilla("toast/advancement"), 0, 0, getWidth(), getHeight());
+    @Override
+    public void draw(DrawContext context, TextRenderer textRenderer, long currentTime) {
+        RenderSystem.setShaderColor(1, 1, 1, 1);
+        context.drawGuiTexture(RenderLayer::getGuiTextured, Identifier.ofVanilla("toast/advancement"), 0, 0, getWidth(), getHeight());
 
         int x = 28;
         MinecraftClient mc = MinecraftClient.getInstance();
@@ -54,8 +64,6 @@ public class CustomToast implements Toast {
         context.drawText(mc.textRenderer, title, x, 7, titleColor, false);
         context.drawText(mc.textRenderer, text, x, 18, textColor, false);
         context.drawItem(icon, 8, 8);
-
-        return currentTime - start >= duration ? Toast.Visibility.HIDE : Toast.Visibility.SHOW;
     }
 
     public void remove() {
